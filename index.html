@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Four</title>
+    <!-- Talwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awosome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+</head>
+<body>
+    <header class=" w-[90%] md:w-[80%] mx-auto my-4">
+        <h2 class=" text-[18px] md:text-3xl  font-bold">Job Application Tracker</h2>
+        <div class="grid grid-cols-3 gap-3 mt-4">
+            <div class="bg-[#f8f4f4] p-3 rounded-sm">
+                <p>Total</p>
+                <p class="font-bold text-lg">0</p>
+            </div>
+            <div class="bg-[#f8f4f4] p-3 rounded-sm">
+                <p>Interview</p>
+                <p class="text-green-600 font-bold text-shadow-lg">0</p>
+            </div>
+            <div class="bg-[#f8f4f4] p-3 rounded-sm">
+                <p>Rejected</p>
+                <p class="text-red-700 text-lg font-bold">0</p>
+            </div>
+        </div>
+        <hr class="mt-6 text-gray-300">
+    </header>
+    <main class="w-[90%] md:w-[80%] mx-auto my-4">
+        <div class="flex justify-between">
+            <p class="text-[18px] ">Avilable Jobs</p>
+            <p>8 Jobs</p>
+        </div>
+    <div class="mt-3">
+      <button class="bg-[#f8f4f4] py-1 px-8 rounded-sm">All</button>
+      <button class="bg-[#f8f4f4] py-1 px-8 rounded-sm">Interview</button>
+      <button class="bg-[#f8f4f4] py-1 px-8 rounded-sm">Rejected</button>
+    </div>
+    <div class="allCards">
+        <div>
+            <p></p>
+            <img src="./images/Trash.png" >
+        </div>
+    </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
