@@ -41,7 +41,7 @@ selected.classList.add('bg-[#4067c9]',"text-black")
     if(id == "interviewBtn"){
         allCardsSection.classList.add("hidden")
         emptyCardSection.classList.remove("hidden")
-          totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
+        totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
     }
     else if (id == 'allBtn') {
         allCardsSection.classList.remove('hidden');
@@ -77,6 +77,10 @@ else if (id == 'rejectedBtn') {
     if(!existingInterviewItem){
         inteviewCountList.push(cardItems)
     }
+     
+
+
+
     renderinteviewCount()
     calCulate();
        }
@@ -104,6 +108,8 @@ else if (id == 'rejectedBtn') {
     renderRejecrCount()
     calCulate();
        }
+  
+
     // console.log(inteviewCountList);
  })
 
@@ -121,14 +127,14 @@ else if (id == 'rejectedBtn') {
             <p class=" compani-name text-[18px] font-semibold">${item.companyName}</p>
             <p class="position">${item.jobPosition}</p>
             </div>
-            <div><img src="./images/Trash.png" ></div>
+            <div><img src="./images/Trash.png" class="deletBtn cursor-pointer" ></div>
         </div>
         <p class="mt-6 job-status">${item.jobStatus}</p>
         <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
         <p class="mt-2 jobDes">${item.jobDes}</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>`
 
@@ -165,14 +171,14 @@ else if (id == 'rejectedBtn') {
             <p class=" compani-name text-[18px] font-semibold">${reject.companyName}</p>
             <p class="position">${reject.jobPosition}</p>
             </div>
-            <div><img src="./images/Trash.png" ></div>
+            <div><img src="./images/Trash.png" class="deletBtn cursor-pointer" ></div>
         </div>
         <p class="mt-6 job-status">${reject.jobStatus}</p>
         <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
         <p class="mt-2 jobDes">${reject.jobDes}</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>`
 
