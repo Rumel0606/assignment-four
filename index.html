@@ -14,15 +14,15 @@
         <div class="grid grid-cols-3 gap-3 mt-4">
             <div class="bg-[#f8f4f4] p-3 rounded-sm">
                 <p>Total</p>
-                <p class="font-bold text-lg">0</p>
+                <p id="total-count" class="font-bold text-lg">0</p>
             </div>
             <div class="bg-[#f8f4f4] p-3 rounded-sm">
                 <p>Interview</p>
-                <p class="text-green-600 font-bold text-shadow-lg">0</p>
+                <p id="interview-count" class="text-green-500 font-bold text-shadow-lg">0</p>
             </div>
             <div class="bg-[#f8f4f4] p-3 rounded-sm">
                 <p>Rejected</p>
-                <p class="text-red-700 text-lg font-bold">0</p>
+                <p id="rejected-count" class="text-red-700 text-lg font-bold">0</p>
             </div>
         </div>
         <hr class="mt-6 text-gray-300">
@@ -33,26 +33,32 @@
             <p>8 Jobs</p>
         </div>
     <div class="mt-3">
-      <button class="bg-[#f8f4f4] py-1 px-8 rounded-sm">All</button>
-      <button class="bg-[#f8f4f4] py-1 px-8 rounded-sm">Interview</button>
-      <button class="bg-[#f8f4f4] py-1 px-8 rounded-sm">Rejected</button>
+      <button onclick="toggleStyle('allBtn')" id="allBtn" class="bg-[#f8f4f4] py-1.5 px-8 rounded-sm">All</button>
+      <button onclick="toggleStyle('interviewBtn')" id="interviewBtn"  class="bg-[#f8f4f4] py-1.5 px-8 rounded-sm ">Interview</button>
+      <button onclick="toggleStyle('rejectedBtn')" id="rejectedBtn" class ="bg-[#f8f4f4] py-1.5 px-8 rounded-sm ">Rejected</button>
     </div>
-    <div class="allCards">
+  <!-- Empty card -->
+   <section id="empty-card">
+
+   </section>
+
+
+    <div id="allCards">
         <!-- Card 1 -->
         <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">DataViz Solutions</p>
-            <p>Data Visualization Specialist</p>
+            <p class=" compani-name text-[18px] font-semibold">DataViz Solutions</p>
+            <p class="position">Data Visualization Specialist</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6">Remote • Full-time • $130,000 - $175,000</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+        <p class="mt-6 job-status">Remote • Full-time • $130,000 - $175,000</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
 
@@ -60,119 +66,119 @@
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">TechNova Solutions</p>
-            <p>Frontend Developer</p>
+            <p class="text-[18px] font-semibold compani-name">TechNova Solutions</p>
+            <p class="position">Frontend Developer</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6">Sylhet, Bangladesh,Full-time (on-site) • ৳30,000 - ৳5,0000/ Months</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">We are looking for a passionate frontend developer with knowledge of HTML, CSS, Tailwind, and JavaScript.</p>
+        <p class="mt-6 job-status">Sylhet, Bangladesh,Full-time (on-site) • ৳30,000 - ৳5,0000/ Months</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">We are looking for a passionate frontend developer with knowledge of HTML, CSS, Tailwind, and JavaScript.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
         <!-- Card 3 -->
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">CyberGuard IT</p>
-            <p>Cybersecurity Analyst (Entry Level)</p>
+            <p class="text-[18px] font-semibold compani-name">CyberGuard IT</p>
+            <p class="position">Cybersecurity Analyst (Entry Level)</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6">Full-time (Remote) • ৳50,000 - ৳6,0000/ Months</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">Join our security team to monitor network traffic, analyze vulnerabilities, and assist in penetration testing. Basic understanding of networking and security tools is required. Training will be provided.</p>
+        <p class="mt-6 job-status">Full-time (Remote) • ৳50,000 - ৳6,0000/ Months</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">Join our security team to monitor network traffic, analyze vulnerabilities, and assist in penetration testing. Basic understanding of networking and security tools is required. Training will be provided.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
         <!-- Card 4 -->
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">BrightPath Digital</p>
-            <p>WordPress Developer</p>
+            <p class="text-[18px] font-semibold compani-name">BrightPath Digital</p>
+            <p class="position">WordPress Developer</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6">Chattogram, Bangladesh,Part-time (On-site) • ৳20,000 - ৳3,0000/ Months</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">We need a WordPress developer who can customize themes, manage plugins, and optimize website performance. Experience with Elementor and WooCommerce is a plus.</p>
+        <p class="mt-6 job-status">Chattogram, Bangladesh,Part-time (On-site) • ৳20,000 - ৳3,0000/ Months</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">We need a WordPress developer who can customize themes, manage plugins, and optimize website performance. Experience with Elementor and WooCommerce is a plus.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
         <!-- Card 5 -->
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">SkyLine Marketing</p>
-            <p>Virtual Assistant</p>
+            <p class="text-[18px] font-semibold compani-name">SkyLine Marketing</p>
+            <p class="position">Virtual Assistant</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6"> Contact • $400 – $600/month</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">Looking for an organized virtual assistant to handle email management, scheduling, data entry, and client communication. Strong English communication skills are required.</p>
+        <p class="mt-6 job-status"> Contact • $400 – $600/month</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">Looking for an organized virtual assistant to handle email management, scheduling, data entry, and client communication. Strong English communication skills are required.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
         <!-- Card 6 -->
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">CodeCrafters Ltd</p>
-            <p>JavaScript Developer</p>
+            <p class="text-[18px] font-semibold compani-name">CodeCrafters Ltd</p>
+            <p class="position">JavaScript Developer</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6"> Sylhet, Bangladesh,Full-time (Hybrid) ৳40,000 – ৳60,000/month</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">Seeking a JavaScript developer with experience in ES6+, DOM manipulation, and API integration. Knowledge of React is a bonus. Ability to debug and solve logical problems is essential.</p>
+        <p class="mt-6 job-status"> Sylhet, Bangladesh,Full-time (Hybrid) ৳40,000 – ৳60,000/month</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">Seeking a JavaScript developer with experience in ES6+, DOM manipulation, and API integration. Knowledge of React is a bonus. Ability to debug and solve logical problems is essential.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
         <!-- Card 7 -->
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">Global E-Commerce Hub</p>
-            <p>Dropshipping Manager</p>
+            <p class="text-[18px] font-semibold compani-name">Global E-Commerce Hub</p>
+            <p class="position">Dropshipping Manager</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6"> Full-time (Remote) $800/month + Commission</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2"> Manage product listings, supplier communication, order fulfillment, and ad campaigns. Experience with Shopify and Facebook Ads is preferred.</p>
+        <p class="mt-6 job-status"> Full-time (Remote) $800/month + Commission</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes"> Manage product listings, supplier communication, order fulfillment, and ad campaigns. Experience with Shopify and Facebook Ads is preferred.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
         <!-- Card 8 -->
  <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
             <div class="space-y-1">
-            <p class="text-[18px] font-semibold">NextGen Soft</p>
-            <p>Backend Developer (Node.js)</p>
+            <p class="text-[18px] font-semibold compani-name">NextGen Soft</p>
+            <p class="position" >Backend Developer (Node.js)</p>
             </div>
             <div><img src="./images/Trash.png" ></div>
         </div>
-        <p class="mt-6"> Dhaka, Bangladesh,Full-time (On-site) ৳50,000 – ৳70,000/month</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7">Not applied</button>
-        <p class="mt-2">Looking for a backend developer skilled in Node.js, Express, and MongoDB. Responsibilities include API development, database management, and server optimization.</p>
+        <p class="mt-6 job-status"> Dhaka, Bangladesh,Full-time (On-site) ৳50,000 – ৳70,000/month</p>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <p class="mt-2 jobDes">Looking for a backend developer skilled in Node.js, Express, and MongoDB. Responsibilities include API development, database management, and server optimization.</p>
       <div class="mt-2.5">
-          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm">Interview</button>
-        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm">Rejected</button>
+          <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
+        <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>
 
