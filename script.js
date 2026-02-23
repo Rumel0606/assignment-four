@@ -27,7 +27,6 @@ const interviewBtn = document.getElementById("interviewBtn")
 const rejectedBtn = document.getElementById("rejectedBtn")
 
 function toggleStyle(id){
-    currentStatus = id
     allBtn.classList.remove('bg-[#4067c9]')
     interviewBtn.classList.remove('bg-[#4067c9]')
     rejectedBtn.classList.remove('bg-[#4067c9]')
@@ -37,13 +36,20 @@ function toggleStyle(id){
     rejectedBtn.classList.add('bg-[#f8f4f4]',"text-black")
 
 const selected = document.getElementById(id)
+currentStatus = id
 selected.classList.remove('bg-[#f8f4f4]',"text-black")
 selected.classList.add('bg-[#4067c9]',"text-black")
 
     if(id == "interviewBtn"){
         allCardsSection.classList.add("hidden")
         emptyCardSection.classList.remove("hidden")
-        totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
+        // totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
+    //  totalJobs.innerText =   getInterviewJobs() + " of " + getTotalJobs() + " Jobs";
+    //  let total = allCardsSection.children.length + emptyCardSection.children.length;
+    // totalJobs.innerText = total + " Jobs";
+     let total = inteviewCountList.length
+     totalJobs.innerText = total + " of" + allCardsSection.children.length + " Jobs";
+        renderinteviewCount()
     }
     else if (id == 'allBtn') {
         allCardsSection.classList.remove('hidden');
@@ -53,6 +59,7 @@ else if (id == 'rejectedBtn') {
         allCardsSection.classList.add('hidden');
         emptyCardSection.classList.remove('hidden')
         totalJobs.innerText = rejectedCountList.length + " of " +  allCardsSection.children.length + " Jobs";
+        renderRejecrCount();
     }
 }
 
@@ -81,10 +88,10 @@ else if (id == 'rejectedBtn') {
     }
      rejectedCountList = rejectedCountList.filter(item => item.companyName != cardItems.companyName)
      
-       if (currentStatus == 'reject-btn') {
-           renderRejecrCount()
+       if (currentStatus == "rejectedBtn") {
+             renderRejecrCount()
         }
-    renderinteviewCount()
+    // renderinteviewCount()
     calCulate();
        }
       else  if(e.target.classList.contains('reject-btn')){
@@ -111,12 +118,23 @@ else if (id == 'rejectedBtn') {
       
     inteviewCountList = inteviewCountList.filter(item => item.companyName != cardItems.companyName);
 
-     if (currentStatus == 'inter-btn') {
-           renderinteviewCount();
+     if (currentStatus == "interviewBtn") {
+            renderinteviewCount();
         }
-    renderRejecrCount()
+//    renderRejecrCount()
     calCulate();
        }
+       else if (e.target.classList.contains("deletBtn")) {
+     const parentNode = e.target.parentNode.parentNode.parentNode.parentNode;
+      parentNode.remove();
+      const title =parentNode.querySelector(".compani-name").innerText;
+      inteviewCountList = inteviewCountList.filter(item => item.companyName !== title);
+        rejectedCountList = rejectedCountList.filter(item => item.companyName !== title);
+
+        calCulate()
+
+}
+
   
  })
 
@@ -137,7 +155,7 @@ else if (id == 'rejectedBtn') {
             <div><img src="./images/Trash.png" class="deletBtn cursor-pointer" ></div>
         </div>
         <p class="mt-6 job-status">${item.jobStatus}</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Interview</button>
         <p class="mt-2 jobDes">${item.jobDes}</p>
       <div class="mt-2.5">
           <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
@@ -167,7 +185,7 @@ else if (id == 'rejectedBtn') {
             <div><img src="./images/Trash.png" class="deletBtn cursor-pointer" ></div>
         </div>
         <p class="mt-6 job-status">${reject.jobStatus}</p>
-        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Not applied</button>
+        <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Rejected</button>
         <p class="mt-2 jobDes">${reject.jobDes}</p>
       <div class="mt-2.5">
           <button class="border-2 border-green-500 px-3 text-green-600 py-0.5 rounded-sm inter-btn">Interview</button>
