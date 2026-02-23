@@ -49,6 +49,7 @@ selected.classList.add('bg-[#4067c9]',"text-black")
     else if (id == 'allBtn') {
         allCardsSection.classList.remove('hidden');
         emptyCardSection.classList.add('hidden')
+        allCardsSection.children.length
 }   
 else if (id == 'rejectedBtn') {
         allCardsSection.classList.add('hidden');
@@ -86,7 +87,7 @@ else if (id == 'rejectedBtn') {
        if (currentStatus == "rejectedBtn") {
              renderRejecrCount()
         }
-    // renderinteviewCount()
+  
     calCulate();
        }
       else  if(e.target.classList.contains('reject-btn')){
@@ -116,7 +117,6 @@ else if (id == 'rejectedBtn') {
      if (currentStatus == "interviewBtn") {
             renderinteviewCount();
         }
-//    renderRejecrCount()
     calCulate();
        }
        else if (e.target.classList.contains("deletBtn")) {
@@ -124,21 +124,25 @@ else if (id == 'rejectedBtn') {
       parentNode.remove();
       const title =parentNode.querySelector(".compani-name").innerText;
       inteviewCountList = inteviewCountList.filter(item => item.companyName !== title);
-        rejectedCountList = rejectedCountList.filter(item => item.companyName !== title);
-
-        calCulate()
-
+      rejectedCountList = rejectedCountList.filter(item => item.companyName !== title);
+   calCulate();
 }
-
+ 
   
  })
 
  function renderinteviewCount(){
-    
-    if(inteviewCountList == 0){
+    emptyCardSection.innerHTML ='';
+    if(inteviewCountList.length == 0){
+        emptyCardSection.innerHTML =`
+        <div id="no-jobs" class="text-center  py-30">
+        <img class="mx-auto" src="./images/jobs.png">
+       <p class="text-2xl font-semibold">No jobs available</p>
+       <p>Check back soon for new job opportunities</p>
+       </div>`;
          return;
     }
-    emptyCardSection.innerHTML ='';
+    
     for(let item of inteviewCountList){
         console.log(item);
         let div = document.createElement('div')
@@ -165,14 +169,18 @@ else if (id == 'rejectedBtn') {
     }
  }
 
-
   function renderRejecrCount(){
-
-    if(rejectedCountList == 0){
-         return;
+ emptyCardSection.innerHTML = '';
+    if(rejectedCountList.length == 0){
+         emptyCardSection.innerHTML = `
+         <div id="no-jobs" class="text-center  py-30">
+        <img class="mx-auto" src="./images/jobs.png">
+       <p class="text-2xl font-semibold">No jobs available</p>
+       <p>Check back soon for new job opportunities</p>
+       </div>`;
+        return;
     }
-    emptyCardSection.innerHTML ='';
-    
+   
     for(let reject of rejectedCountList){
         console.log(reject);
         let div = document.createElement('div')
