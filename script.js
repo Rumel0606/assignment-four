@@ -1,5 +1,6 @@
 let inteviewCountList = [];
 let rejectedCountList = [];
+let currentStatus = 'all';
 
 const totalCount = document.getElementById("total-count")
 const inteviewCount = document.getElementById("interview-count")
@@ -26,6 +27,7 @@ const interviewBtn = document.getElementById("interviewBtn")
 const rejectedBtn = document.getElementById("rejectedBtn")
 
 function toggleStyle(id){
+    currentStatus = id
     allBtn.classList.remove('bg-[#4067c9]')
     interviewBtn.classList.remove('bg-[#4067c9]')
     rejectedBtn.classList.remove('bg-[#4067c9]')
@@ -77,10 +79,11 @@ else if (id == 'rejectedBtn') {
     if(!existingInterviewItem){
         inteviewCountList.push(cardItems)
     }
+     rejectedCountList = rejectedCountList.filter(item => item.companyName != cardItems.companyName)
      
-
-
-
+       if (currentStatus == 'reject-btn') {
+           renderRejecrCount()
+        }
     renderinteviewCount()
     calCulate();
        }
@@ -105,12 +108,16 @@ else if (id == 'rejectedBtn') {
     if(!existingRejectItem){
         rejectedCountList.push(cardItems)
     }
+      
+    inteviewCountList = inteviewCountList.filter(item => item.companyName != cardItems.companyName);
+
+     if (currentStatus == 'inter-btn') {
+           renderinteviewCount();
+        }
     renderRejecrCount()
     calCulate();
        }
   
-
-    // console.log(inteviewCountList);
  })
 
  function renderinteviewCount(){
@@ -138,20 +145,6 @@ else if (id == 'rejectedBtn') {
       </div>
         </div>`
 
-//     div.innerHTML = `
-// <div class="bg-[#faf7f7] p-6 mt-3">
-//     <div class="flex justify-between mt-4">
-//         <div class="space-y-1">
-//             <p class="compani-name text-[18px] font-semibold">${item.companyName}</p>
-//             <p class="position">${item.jobPosition}</p>
-//         </div>
-//         <div><img src="./images/Trash.png"></div>
-//     </div>
-//     <p class="mt-6 job-status">${item.jobStatus}</p>
-//     <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Interview</button>
-//     <p class="mt-2 jobDes">${item.jobDes}</p>
-// </div>
-// `
         emptyCardSection.appendChild(div)
     }
  }
@@ -181,21 +174,6 @@ else if (id == 'rejectedBtn') {
         <button class="border-2 border-red-500 px-3 text-red-600 py-0.5 rounded-sm reject-btn">Rejected</button>
       </div>
         </div>`
-
-//     div.innerHTML = `
-// <div class="bg-[#faf7f7] p-6 mt-3">
-//     <div class="flex justify-between mt-4">
-//         <div class="space-y-1">
-//             <p class="compani-name text-[18px] font-semibold">${item.companyName}</p>
-//             <p class="position">${item.jobPosition}</p>
-//         </div>
-//         <div><img src="./images/Trash.png"></div>
-//     </div>
-//     <p class="mt-6 job-status">${item.jobStatus}</p>
-//     <button class="bg-[#EEF4FF] py-1 px-3 rounded-sm mt-7 jobSituion">Interview</button>
-//     <p class="mt-2 jobDes">${item.jobDes}</p>
-// </div>
-// `
         emptyCardSection.appendChild(div)
     }
  }
