@@ -120,12 +120,13 @@ else if (id == 'rejectedBtn') {
     calCulate();
        }
        else if (e.target.classList.contains("deletBtn")) {
-     const parentNode = e.target.parentNode.parentNode.parentNode.parentNode;
+      const parentNode = e.target.parentNode.parentNode.parentNode;
       parentNode.remove();
       const title =parentNode.querySelector(".compani-name").innerText;
+      console.log(title);
       inteviewCountList = inteviewCountList.filter(item => item.companyName !== title);
       rejectedCountList = rejectedCountList.filter(item => item.companyName !== title);
-   calCulate();
+     calCulate();
 }
  
   
