@@ -43,12 +43,7 @@ selected.classList.add('bg-[#4067c9]',"text-black")
     if(id == "interviewBtn"){
         allCardsSection.classList.add("hidden")
         emptyCardSection.classList.remove("hidden")
-        // totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
-    //  totalJobs.innerText =   getInterviewJobs() + " of " + getTotalJobs() + " Jobs";
-    //  let total = allCardsSection.children.length + emptyCardSection.children.length;
-    // totalJobs.innerText = total + " Jobs";
-     let total = inteviewCountList.length
-     totalJobs.innerText = total + " of" + allCardsSection.children.length + " Jobs";
+        totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
         renderinteviewCount()
     }
     else if (id == 'allBtn') {
@@ -139,8 +134,11 @@ else if (id == 'rejectedBtn') {
  })
 
  function renderinteviewCount(){
-    emptyCardSection.innerHTML ='';
     
+    if(inteviewCountList == 0){
+         return;
+    }
+    emptyCardSection.innerHTML ='';
     for(let item of inteviewCountList){
         console.log(item);
         let div = document.createElement('div')
@@ -169,6 +167,10 @@ else if (id == 'rejectedBtn') {
 
 
   function renderRejecrCount(){
+
+    if(rejectedCountList == 0){
+         return;
+    }
     emptyCardSection.innerHTML ='';
     
     for(let reject of rejectedCountList){
