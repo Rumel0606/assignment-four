@@ -123,7 +123,7 @@ else if (id == 'rejectedBtn') {
       const parentNode = e.target.parentNode.parentNode.parentNode;
       parentNode.remove();
       const title =parentNode.querySelector(".compani-name").innerText;
-      console.log(title);
+    //   console.log(title);
       inteviewCountList = inteviewCountList.filter(item => item.companyName !== title);
       rejectedCountList = rejectedCountList.filter(item => item.companyName !== title);
      calCulate();
@@ -145,9 +145,9 @@ else if (id == 'rejectedBtn') {
     }
     
     for(let item of inteviewCountList){
-        console.log(item);
+        // console.log(item);
         let div = document.createElement('div')
-        div.className = "bg-[#faf7f7] p-6 mt-3";
+        div.className = "bg-[#faf7f7] ";
         div.innerHTML =`
         <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
@@ -183,9 +183,9 @@ else if (id == 'rejectedBtn') {
     }
    
     for(let reject of rejectedCountList){
-        console.log(reject);
+        // console.log(reject);
         let div = document.createElement('div')
-        div.className = "bg-[#faf7f7] p-6 mt-3";
+        div.className = "bg-[#faf7f7]";
         div.innerHTML =`
         <div class="bg-[#faf7f7] p-6 mt-3">
             <div class="flex justify-between mt-4">
