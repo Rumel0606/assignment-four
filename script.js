@@ -126,11 +126,26 @@ else if (id == 'rejectedBtn') {
     //   console.log(title);
       inteviewCountList = inteviewCountList.filter(item => item.companyName !== title);
       rejectedCountList = rejectedCountList.filter(item => item.companyName !== title);
-     calCulate();
+    calCulate();
+    updateTotalJobs();
 }
- 
+  
   
  })
+ function updateTotalJobs(){
+
+    const total = allCardsSection.children.length;
+
+    if(currentStatus === "interviewBtn"){
+        totalJobs.innerText = inteviewCountList.length + " of " + total + " Jobs";
+    }
+    else if(currentStatus === "rejectedBtn"){
+        totalJobs.innerText = rejectedCountList.length + " of " + total + " Jobs";
+    }
+    else{
+        totalJobs.innerText = total + " Jobs";
+    }
+}
 
  function renderinteviewCount(){
     emptyCardSection.innerHTML ='';
