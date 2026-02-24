@@ -49,7 +49,7 @@ selected.classList.add('bg-[#4067c9]',"text-black")
     else if (id == 'allBtn') {
         allCardsSection.classList.remove('hidden');
         emptyCardSection.classList.add('hidden')
-        allCardsSection.children.length
+        // allCardsSection.children.length
 }   
 else if (id == 'rejectedBtn') {
         allCardsSection.classList.add('hidden');
@@ -86,9 +86,10 @@ else if (id == 'rejectedBtn') {
      
        if (currentStatus == "rejectedBtn") {
              renderRejecrCount()
+               
         }
+  calCulate();
   
-    calCulate();
        }
       else  if(e.target.classList.contains('reject-btn')){
      const parentNode = e.target.parentNode.parentNode;
@@ -117,6 +118,7 @@ else if (id == 'rejectedBtn') {
      if (currentStatus == "interviewBtn") {
             renderinteviewCount();
         }
+       
     calCulate();
        }
        else if (e.target.classList.contains("deletBtn")) {
