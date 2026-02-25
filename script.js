@@ -45,10 +45,12 @@ selected.classList.add('bg-[#4067c9]',"text-black")
         emptyCardSection.classList.remove("hidden")
         totalJobs.innerText = inteviewCountList.length + " of " +  allCardsSection.children.length + " Jobs";
         renderinteviewCount()
+
     }
     else if (id == 'allBtn') {
         allCardsSection.classList.remove('hidden');
         emptyCardSection.classList.add('hidden')
+        updateTotalJobs();
         // allCardsSection.children.length
 }   
 else if (id == 'rejectedBtn') {
@@ -84,12 +86,13 @@ else if (id == 'rejectedBtn') {
     }
      rejectedCountList = rejectedCountList.filter(item => item.companyName != cardItems.companyName)
      
+     
        if (currentStatus == "rejectedBtn") {
              renderRejecrCount()
                
         }
   calCulate();
-  
+      updateTotalJobs()
        }
       else  if(e.target.classList.contains('reject-btn')){
      const parentNode = e.target.parentNode.parentNode;
@@ -118,8 +121,8 @@ else if (id == 'rejectedBtn') {
      if (currentStatus == "interviewBtn") {
             renderinteviewCount();
         }
-       
     calCulate();
+        updateTotalJobs()
        }
        else if (e.target.classList.contains("deletBtn")) {
       const parentNode = e.target.parentNode.parentNode.parentNode;
